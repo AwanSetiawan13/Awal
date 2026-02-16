@@ -1,509 +1,207 @@
+<!-- ===== file: staff_dashboard.html ===== -->
 <!doctype html>
 <html lang="id">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Staff - Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Staff Dashboard - Bisa Media</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --blue:#0b5ad6;
-      --blue2:#1f88d7;
-      --ice:#e9f8ff;
-      --ink:#0d2b55;
-      --shadow: 0 10px 22px rgba(0,0,0,.12);
-      --shadow2: 0 6px 14px rgba(0,0,0,.12);
-      --border: rgba(10, 80, 170, .28);
-    }
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family:Poppins,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-      background:#f6f7fb;
-      color:#123;
-      display:flex;
-      justify-content:center;
-    }
-
-    /* --- phone frame (biar pas kayak screenshot) --- */
-    .phone{
-      width: 390px;          /* ukuran iPhone-ish */
-      min-height: 844px;     /* tinggi iPhone-ish */
-      background: #eaf8ff;
-      position:relative;
-      overflow:hidden;
-      box-shadow: 0 18px 40px rgba(0,0,0,.12);
-    }
-    @media (max-width:420px){
-      body{ justify-content:stretch; }
-      .phone{ width:100vw; min-height:100vh; border-radius:0; box-shadow:none; }
-    }
-
-    /* --- HERO TOP --- */
-    .hero{
-      position:relative;
-      height: 360px;
-      padding: 26px 22px 0;
-      background: linear-gradient(140deg, #2b86d8 0%, #59aee9 48%, #aee6ff 100%);
-    }
-    /* watermark besar */
-    .hero .wm{
-      position:absolute;
-      inset:-40px -60px auto auto;
-      width: 420px;
-      height: 420px;
-      opacity:.20;
-      transform: rotate(-10deg);
-      pointer-events:none;
-      filter: blur(.2px);
-    }
-    /* gelombang bawah */
-    .hero::after{
-      content:"";
-      position:absolute;
-      left:-120px;
-      right:-120px;
-      bottom:-150px;
-      height: 280px;
-      background: #eaf8ff;
-      border-radius: 60% 60% 0 0 / 70% 70% 0 0;
-      box-shadow: 0 -18px 0 rgba(255,255,255,.12) inset;
-    }
-
-    .topRow{
-      position:relative;
-      z-index:2;
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-    .logoMark{
-      width:54px;height:54px;
-      border-radius:14px;
-      background: radial-gradient(circle at 30% 30%, #ffffff 0%, #d8f0ff 35%, #1f7bd8 100%);
-      display:grid;
-      place-items:center;
-      box-shadow: 0 10px 18px rgba(0,0,0,.14);
-    }
-    .brandText{
-      line-height:1.05;
-      font-weight:800;
-      letter-spacing:.5px;
-      color:#fff;
-      font-size:18px;
-    }
-    .brandText span{ display:block; }
-    .brandText .bisa{ font-size:18px; }
-    .brandText .media{ font-size:18px; }
-
-    .bellBtn{
-      width:48px;height:48px;
-      border:none;
-      background:transparent;
-      display:grid;
-      place-items:center;
-      cursor:pointer;
-      padding:0;
-    }
-    .bellBtn svg{ width:30px;height:30px; fill:#fff; filter: drop-shadow(0 3px 6px rgba(0,0,0,.18)); }
-
-    .greetRow{
-      position:relative;
-      z-index:2;
-      margin-top: 28px;
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:16px;
-    }
-    .greet{
-      color:#fff;
-      padding-top: 18px;
-    }
-    .greet .small{ font-size:18px; opacity:.95; }
-    .greet .name{
-      font-size:42px;
-      font-weight:800;
-      margin-top:4px;
-      line-height:1.05;
-      letter-spacing:.3px;
-    }
-    .greet .role{
-      margin-top:6px;
-      font-size:16px;
-      opacity:.9;
-    }
-
-    .avatarWrap{
-      width:84px;height:84px;
-      border-radius:50%;
-      background: rgba(255,255,255,.30);
-      display:grid;
-      place-items:center;
-      box-shadow: 0 10px 18px rgba(0,0,0,.12);
-      margin-top: 36px;
-      flex: 0 0 auto;
-    }
-    .avatar{
-      width:74px;height:74px;
-      border-radius:50%;
-      object-fit:cover;
-      border: 3px solid rgba(255,255,255,.85);
-    }
-
-    /* --- CONTENT --- */
-    .content{
-      position:relative;
-      z-index:3;
-      padding: 0 18px 120px; /* bottom nav space */
-      margin-top: -18px;
-    }
-
-    /* clock card */
-    .clockCard{
-      width: 100%;
-      margin: 0 auto;
-      background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #cfefff 100%);
-      border-radius: 26px;
-      border: 2px solid rgba(20, 80, 160, .35);
-      box-shadow: var(--shadow);
-      padding: 26px 22px 18px;
-    }
-    .timeBig{
-      text-align:center;
-      font-size: 56px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      color: #0b47c7;
-    }
-    .dateLine{
-      text-align:center;
-      margin-top: 10px;
-      font-size: 18px;
-      font-weight: 600;
-      color: rgba(0,0,0,.55);
-    }
-    .absenRow{
-      margin-top: 26px;
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      align-items:end;
-    }
-    .absenBox{
-      text-align:left;
-      padding: 2px 6px;
-    }
-    .absenBox.right{ text-align:left; padding-left: 26px; }
-    .absenLabel{
-      font-size: 18px;
-      font-weight: 700;
-      color: rgba(0,0,0,.62);
-      margin-bottom: 6px;
-    }
-    .absenVal{
-      font-size: 26px;
-      font-weight: 900;
-      color: #0b47c7;
-      letter-spacing:.3px;
-    }
-    .absenVal.muted{
-      color:#0b47c7;
-      font-weight: 900;
-    }
-
-    /* menu grid */
-    .menuGrid{
-      margin-top: 28px;
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px 18px;
-      padding: 0 6px;
-    }
-    .menuItem{
-      text-decoration:none;
-      color: inherit;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap: 10px;
-      user-select:none;
-    }
-    .tile{
-      width: 74px;
-      height: 74px;
-      border-radius: 12px;
-      background:#fff;
-      border: 2px solid rgba(22, 92, 180, .28);
-      box-shadow: 0 10px 16px rgba(0,0,0,.08);
-      display:grid;
-      place-items:center;
-    }
-    .tile svg{
-      width: 40px;
-      height: 40px;
-      fill: #0b5ad6;
-    }
-    .menuLabel{
-      font-size: 15px;
-      font-weight: 700;
-      color: #0b5ad6;
-      text-align:center;
-      line-height: 1.05;
-    }
-
-    /* bottom nav */
-    .bottomNav{
-      position:absolute;
-      left:0; right:0; bottom:0;
-      height: 92px;
-      background:#fff;
-      box-shadow: 0 -12px 22px rgba(0,0,0,.20);
-      display:flex;
-      justify-content:space-around;
-      align-items:center;
-      padding: 10px 10px 14px;
-    }
-    .navItem{
-      width: 70px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap: 6px;
-      text-decoration:none;
-      color: rgba(0,0,0,.55);
-      font-weight:700;
-      font-size:14px;
-    }
-    .navItem svg{
-      width:28px;height:28px;
-      fill: rgba(0,0,0,.55);
-    }
-    .navItem.active{
-      color: rgba(0,0,0,.65);
-    }
-    .navItem.active svg{
-      fill: rgba(0,0,0,.70);
-    }
-  </style>
+  <link rel="stylesheet" href="./style.css" />
 </head>
-
 <body>
   <div class="phone">
+    <div class="screen">
 
-    <header class="hero">
-      <!-- watermark (huruf besar samar) -->
-      <svg class="wm" viewBox="0 0 600 600" aria-hidden="true">
-        <defs>
-          <linearGradient id="gwm" x1="0" x2="1">
-            <stop offset="0" stop-color="#ffffff"/>
-            <stop offset="1" stop-color="#ffffff"/>
-          </linearGradient>
-        </defs>
-        <path fill="url(#gwm)" d="M140 110c120-90 290-55 350 60 55 105 0 250-115 310-120 63-280 25-330-88-45-98-5-228 95-282z"/>
-        <path fill="#ffffff" d="M270 170c95 0 170 75 170 170s-75 170-170 170-170-75-170-170 75-170 170-170zm0 78c-51 0-92 41-92 92s41 92 92 92 92-41 92-92-41-92-92-92z" opacity=".55"/>
-      </svg>
+      <!-- ===== HERO / TOP AREA ===== -->
+      <header class="hero">
+        <div class="heroInner">
 
-      <div class="topRow">
-        <div class="brand">
-          <div class="logoMark" aria-hidden="true">
-            <!-- logo simple -->
-            <svg width="32" height="32" viewBox="0 0 24 24">
-              <path fill="#124db8" d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2Z" opacity=".22"/>
-              <path fill="#124db8" d="M8 7.5c0-1.1.9-2 2-2h3.2c1.9 0 3.4 1.5 3.4 3.4 0 1.2-.6 2.2-1.6 2.8l-1.5.9c-.5.3-.8.8-.8 1.4V18h-2.3v-1.8c0-1.3.7-2.5 1.9-3.1l1.6-.9c.5-.3.8-.8.8-1.4 0-.7-.6-1.3-1.3-1.3H10.2v9.5H8V7.5Z"/>
-            </svg>
+          <div class="topRow">
+            <div class="brand">
+              <!-- Pakai logo file kamu (misal taruh di folder assets/logo.png) -->
+              <div class="logoBox">
+                <img class="logoImg" src="assets/logo.png" alt="Bisa Media" onerror="this.style.display='none'; this.parentElement.classList.add('logoFallback')" />
+                <div class="logoFallbackMark" aria-hidden="true"></div>
+              </div>
+
+              <div class="brandText">
+                <div class="brandName1">BISA</div>
+                <div class="brandName2">MEDIA</div>
+              </div>
+            </div>
+
+            <button class="notifBtn" type="button" aria-label="Notifikasi">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2Zm7-6V11a7 7 0 1 0-14 0v5l-2 2v1h18v-1l-2-2Z"/>
+              </svg>
+            </button>
           </div>
-          <div class="brandText">
-            <span class="bisa">BISA</span>
-            <span class="media">MEDIA</span>
+
+          <div class="greetRow">
+            <div class="greet">
+              <div class="gSmall" id="greetText">Selamat Pagi,</div>
+              <div class="gName">Nama</div>
+              <div class="gRole">Sosial Media</div>
+            </div>
+
+            <div class="avatarWrap">
+              <img class="avatar" src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=240&auto=format&fit=crop" alt="Avatar" />
+            </div>
           </div>
+
         </div>
+      </header>
 
-        <button class="bellBtn" type="button" aria-label="Notifikasi">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2Zm7-6-2-2v-3.8a5 5 0 0 0-3.8-4.9V4a1.2 1.2 0 1 0-2.4 0v.3A5 5 0 0 0 7 10.2V14l-2 2v1h14v-1Z"/>
-          </svg>
-        </button>
-      </div>
+      <!-- ===== CONTENT ===== -->
+      <main class="content">
 
-      <div class="greetRow">
-        <div class="greet">
-          <div class="small">Selamat Pagi,</div>
-          <div class="name">Nama</div>
-          <div class="role">Sosial Media</div>
-        </div>
+        <!-- ===== CLOCK STACK (layer bawah + card atas) ===== -->
+        <section class="clockStack" aria-label="Kartu Jam">
+          <div class="clockUnder" aria-hidden="true"></div>
 
-        <div class="avatarWrap">
-          <img class="avatar" alt="Avatar"
-               src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=240&auto=format&fit=crop">
-        </div>
-      </div>
-    </header>
+          <div class="clockCard">
+            <div class="timeBig" id="timeText">07:59 AM</div>
+            <div class="dateLine" id="dateText">Jum’at, 12-12-2025</div>
 
-    <main class="content">
-      <section class="clockCard" aria-label="Kartu Jam">
-        <div class="timeBig" id="timeText">07:59 AM</div>
-        <div class="dateLine" id="dateText">Jum’at, 12-12-2025</div>
+            <div class="absenRow">
+              <div class="absenCol">
+                <div class="absenLabel">Absen Masuk</div>
+                <div class="absenVal" id="inText">07:58 AM</div>
+              </div>
 
-        <div class="absenRow">
-          <div class="absenBox">
-            <div class="absenLabel">Absen Masuk</div>
-            <div class="absenVal" id="inText">07:58 AM</div>
+              <div class="absenCol">
+                <div class="absenLabel">Absen Keluar</div>
+                <div class="absenVal" id="outText">Belum Absen</div>
+              </div>
+            </div>
           </div>
-          <div class="absenBox right">
-            <div class="absenLabel">Absen Keluar</div>
-            <div class="absenVal muted" id="outText">Belum Absen</div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="menuGrid" aria-label="Menu">
-        <a class="menuItem" href="#" onclick="return false;">
-          <div class="tile" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M4 5h16v14H4V5Zm2 2v10h12V7H6Zm3 1.2h6V10H9V8.2Zm0 3h6v1.8H9V11.2Z"/>
-              <path d="M9 14.5h6V16H9v-1.5Z"/>
-            </svg>
-          </div>
-          <div class="menuLabel">Kehadiran</div>
+        <!-- ===== MENU GRID ===== -->
+        <section class="menuGrid" aria-label="Menu Utama">
+          <a class="menuItem" href="#" aria-label="Kehadiran">
+            <div class="menuIcon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 3h16v18H4V3Zm2 2v14h12V5H6Zm2 2h8v2H8V7Zm2 4a2.3 2.3 0 1 0 0-4.6A2.3 2.3 0 0 0 10 11Zm-1.8 6c.6-1.8 2.2-3 3.8-3s3.2 1.2 3.8 3H8.2Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel">Kehadiran</div>
+          </a>
+
+          <a class="menuItem" href="#" aria-label="Milestone">
+            <div class="menuIcon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 11h-6.3l.9-3.4c.2-.8-.2-1.6-1-1.9l-2.3-1-2.2 5.1-3.5 1.2V21h7l6.4-6.4c.6-.6.9-1.4.9-2.2V11ZM5 10H2v11h3V10Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel">Milestone</div>
+          </a>
+
+          <a class="menuItem" href="#" aria-label="Pengajuan">
+            <div class="menuIcon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 2h9l3 3v17H6V2Zm8 1v3h3M8 10h8v2H8v-2Zm0 4h6v2H8v-2Zm10.5-3.7-1.4-1.4L11 15v3h3l6.5-6.5Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel">Pengajuan</div>
+          </a>
+
+          <a class="menuItem" href="#" aria-label="Laporan">
+            <div class="menuIcon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2a7 7 0 0 1 7 7v4l2 2v1H3v-1l2-2V9a7 7 0 0 1 7-7Zm0 20a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2Zm1-12h-2v4h2v-4Z"/>
+                <path d="M12 6a1 1 0 0 0-1 1v2h2V7a1 1 0 0 0-1-1Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel">Laporan</div>
+          </a>
+
+          <a class="menuItem" href="#" aria-label="Kinerja">
+            <div class="menuIcon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 20h16v2H4v-2Zm2-3h3v-6H6v6Zm5 0h3V7h-3v10Zm5 0h3v-4h-3v4Z"/>
+                <path d="M6 9l4-3 3 2 5-4 1 1-6 5-3-2-3 2H6Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel">Kinerja</div>
+          </a>
+
+          <a class="menuItem" href="#" aria-label="Payroll">
+            <div class="menuIcon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 7h16v10H4V7Zm2 2v6h12V9H6Zm6 1c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3Z"/>
+                <path d="M2 9h2v6H2V9Zm20 0h-2v6h2V9Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel">Payroll</div>
+          </a>
+
+          <a class="menuItem" href="#" aria-label="Dokumen">
+            <div class="menuIcon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 2h9l3 3v17H6V2Zm8 1v3h3M8 10h8v2H8v-2Zm0 4h8v2H8v-2Z"/>
+                <path d="M11 16h2v2h2v2h-2v2h-2v-2H9v-2h2v-2Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel">Dokumen</div>
+          </a>
+
+          <a class="menuItem" href="#" aria-label="Lembur">
+            <div class="menuIcon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2a9 9 0 1 0 9 9A9 9 0 0 0 12 2Zm1 10h4v2h-6V6h2v6Z"/>
+                <path d="M19 19l2 2-1.4 1.4-2-2L19 19Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel">Lembur</div>
+          </a>
+
+          <!-- baris terakhir: hanya 1 item di kiri -->
+          <a class="menuItem menuItem--solo" href="#" aria-label="Jadwal Piket">
+            <div class="menuIcon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2Zm13 6H4v12h16V8Z"/>
+                <path d="M7 10h4v4H7v-4Zm9 0h-3v2h3v-2Z"/>
+                <path d="M15 13h2v2h2v2h-2v2h-2v-2h-2v-2h2v-2Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel menuLabel--two">Jadwal<br/>Piket</div>
+          </a>
+        </section>
+
+      </main>
+
+      <!-- ===== BOTTOM NAV ===== -->
+      <nav class="bottomNav" aria-label="Navigasi Bawah">
+        <a class="navItem isActive" href="#" aria-label="Beranda">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 11v10h7v-6h6v6h7V11L12 3Z"/></svg>
+          <span>Beranda</span>
         </a>
-
-        <a class="menuItem" href="#" onclick="return false;">
-          <div class="tile" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M8 12h8v2H8v-2Z"/>
-              <path d="M5 7h6v4H5V7Zm8 6h6v4h-6v-4Z"/>
-              <path d="M11 9h3a3 3 0 0 1 3 3v1h-2v-1a1 1 0 0 0-1-1h-3V9Z"/>
-            </svg>
-          </div>
-          <div class="menuLabel">Milestone</div>
+        <a class="navItem" href="#" aria-label="Kalender">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2Zm13 6H4v12h16V8ZM6 10h4v4H6v-4Z"/></svg>
+          <span>Kalender</span>
         </a>
-
-        <a class="menuItem" href="#" onclick="return false;">
-          <div class="tile" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M6 2h9l3 3v17H6V2Zm8 1v3h3"/>
-              <path d="M8 8h8v2H8V8Zm0 4h8v2H8v-2Zm0 4h5v2H8v-2Z"/>
-              <path d="M17.5 12.5l1 1-4.2 4.2-2.1.4.4-2.1 4.9-4.5Z"/>
-            </svg>
-          </div>
-          <div class="menuLabel">Pengajuan</div>
+        <a class="navItem" href="#" aria-label="Work">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3 6h4l2-4h5v2h-4l-2 4H9l-3-6H3v-2Zm6-2a3 3 0 1 1 3 3 3 3 0 0 1-3-3Z"/></svg>
+          <span>Work</span>
         </a>
-
-        <a class="menuItem" href="#" onclick="return false;">
-          <div class="tile" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M4 19h16v2H4v-2Zm2-3h3V8H6v8Zm5 0h3V4h-3v12Zm5 0h3v-6h-3v6Z"/>
-            </svg>
-          </div>
-          <div class="menuLabel">Laporan</div>
+        <a class="navItem" href="#" aria-label="Diskusi">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H7l-3 3V4Zm3 5h10v2H7V9Zm0-3h10v2H7V6Z"/></svg>
+          <span>Diskusi</span>
         </a>
-
-        <a class="menuItem" href="#" onclick="return false;">
-          <div class="tile" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M4 19h16v2H4v-2Z"/>
-              <path d="M6 16V9h3v7H6Zm5 0V6h3v10h-3Zm5 0v-4h3v4h-3Z"/>
-              <path d="M6 8l3-3 3 3h-2v2H8V8H6Z"/>
-            </svg>
-          </div>
-          <div class="menuLabel">Kinerja</div>
+        <a class="navItem" href="#" aria-label="Profil">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4.2 4.2 0 1 0-4.2-4.2A4.2 4.2 0 0 0 12 12Zm0 2c-4.4 0-8 2.2-8 5v1h16v-1c0-2.8-3.6-5-8-5Z"/></svg>
+          <span>Profil</span>
         </a>
+      </nav>
 
-        <a class="menuItem" href="#" onclick="return false;">
-          <div class="tile" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 3c5 0 9 4 9 9s-4 9-9 9-9-4-9-9 4-9 9-9Z" opacity=".2"/>
-              <path d="M7 11h10v2H7v-2Z"/>
-              <path d="M9 7h6v2H9V7Zm0 8h6v2H9v-2Z"/>
-              <path d="M5 12c0-3.9 3.1-7 7-7V3C6.5 3 2 7.5 2 13s4.5 10 10 10v-2c-3.9 0-7-3.1-7-7Z"/>
-            </svg>
-          </div>
-          <div class="menuLabel">Payroll</div>
-        </a>
-
-        <a class="menuItem" href="#" onclick="return false;">
-          <div class="tile" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M6 2h9l3 3v17H6V2Zm8 1v3h3"/>
-              <path d="M8 10h8v2H8v-2Zm0 4h8v2H8v-2Z"/>
-            </svg>
-          </div>
-          <div class="menuLabel">Dokumen</div>
-        </a>
-
-        <a class="menuItem" href="#" onclick="return false;">
-          <div class="tile" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11H7v-2h4V6h2v7Zm4.7-6.3 1.4 1.4-1.9 1.9-1.4-1.4 1.9-1.9Z"/>
-              <path d="M16.5 13.5h2v2h-2v-2Z"/>
-            </svg>
-          </div>
-          <div class="menuLabel">Lembur</div>
-        </a>
-
-        <!-- baris terakhir (1 item) -->
-        <a class="menuItem" href="#" onclick="return false;">
-          <div class="tile" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M7 2h10v2H7V2Zm-2 4h14v16H5V6Zm2 3h10v2H7V9Zm0 4h6v2H7v-2Z"/>
-              <path d="M17.5 13.5l1.5 1.5-2.6 2.6-1.5-1.5 2.6-2.6Z"/>
-            </svg>
-          </div>
-          <div class="menuLabel">Jadwal<br/>Piket</div>
-        </a>
-      </section>
-    </main>
-
-    <nav class="bottomNav" aria-label="Bottom Navigation">
-      <a class="navItem active" href="#" onclick="return false;">
-        <svg viewBox="0 0 24 24"><path d="M12 3 2 11h3v10h6v-6h2v6h6V11h3L12 3Z"/></svg>
-        Beranda
-      </a>
-      <a class="navItem" href="#" onclick="return false;">
-        <svg viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2Zm13 6H4v12h16V8ZM6 10h5v5H6v-5Z"/></svg>
-        Kalender
-      </a>
-      <a class="navItem" href="#" onclick="return false;">
-        <svg viewBox="0 0 24 24"><path d="M4 6h10v12H4V6Zm12 2h4v2h-4V8Zm0 4h4v2h-4v-2Zm0 4h4v2h-4v-2Z"/></svg>
-        Work
-      </a>
-      <a class="navItem" href="#" onclick="return false;">
-        <svg viewBox="0 0 24 24"><path d="M4 4h16v12H7l-3 3V4Zm3 5h10v2H7V9Zm0-3h10v2H7V6Z"/></svg>
-        Diskusi
-      </a>
-      <a class="navItem" href="#" onclick="return false;">
-        <svg viewBox="0 0 24 24"><path d="M12 12a4.2 4.2 0 1 0-4.2-4.2A4.2 4.2 0 0 0 12 12Zm0 2c-4.4 0-8 2.2-8 5v1h16v-1c0-2.8-3.6-5-8-5Z"/></svg>
-        Profil
-      </a>
-    </nav>
-
-    <script>
-      // (Opsional) kalau kamu mau dinamis, aktifkan ini:
-      // updateTime();
-
-      function updateTime(){
-        const t = new Date();
-        let h = t.getHours();
-        const m = String(t.getMinutes()).padStart(2,'0');
-        const ampm = h >= 12 ? 'PM' : 'AM';
-        h = h % 12; if(h === 0) h = 12;
-        const hh = String(h).padStart(2,'0');
-        document.getElementById('timeText').textContent = `${hh}:${m} ${ampm}`;
-      }
-      // setInterval(updateTime, 1000);
-    </script>
+    </div>
   </div>
+
+  <script src="./script.js"></script>
 </body>
 </html>
