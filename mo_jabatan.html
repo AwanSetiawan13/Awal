@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Departement</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <div class="sideTop">
+        <div class="sideBg"></div>
+        <div class="sideUser">
+          <img class="avatar" src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=240&auto=format&fit=crop" alt="avatar">
+          <div class="uname">{Nama}</div>
+
+          <div class="uBtns">
+            <button class="uBtn" type="button" aria-label="User">
+              <svg viewBox="0 0 24 24"><path d="M12 12a4.2 4.2 0 1 0-4.2-4.2A4.2 4.2 0 0 0 12 12Zm0 2c-4.4 0-8 2.2-8 5v1h16v-1c0-2.8-3.6-5-8-5Z"/></svg>
+            </button>
+            <button class="uBtn" type="button" aria-label="Power">
+              <svg viewBox="0 0 24 24"><path d="M11 2h2v10h-2V2Zm7.3 3.7-1.4 1.4A8 8 0 1 1 7.1 7.1L5.7 5.7A10 10 0 1 0 18.3 5.7Z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="navItem" href="mo_dashboard.html"><span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M3 3h8v8H3V3Zm10 0h8v5h-8V3ZM3 13h8v8H3v-8Zm10 7v-10h8v10h-8Z"/></svg>
+        </span>Dashboard</a>
+
+        <a class="navItem" href="mo_kalender.html"><span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm1 17a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V10h16v11Z"/></svg>
+        </span>Kalender</a>
+
+        <div class="secTitle">SDM &amp; Kehadiran <span class="chev"></span></div>
+        <a class="navItem sub" href="mo_karyawan.html"><span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm-8 9v-1c0-3 4-5 8-5s8 2 8 5v1H4Z"/></svg>
+        </span>Data Karyawan</a>
+        <a class="navItem sub" href="mo_departement.html">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4V4Zm3 4h10v2H7V8Zm0 4h7v2H7v-2Z"/></svg></span>
+          <span>Departement</span></a>
+        <a class="navItem sub active" href="mo_jabatan.html"><span class="bar"></span><span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M6 2h12v4H6V2Zm-2 6h16v14H4V8Zm4 4h8v2H8v-2Zm0 4h6v2H8v-2Z"/></svg>
+        </span>Jabatan</a>
+        <a class="navItem sub" href="mo_rekap_absensi.html"><span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M6 2h12v6H6V2Zm-2 8h16v12H4V10Zm4 3h8v2H8v-2Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2Zm13 6H4v14h16V8ZM6 10h5v5H6v-5Z"/></svg>
+        </span>Rekap Absensi + Lembur</a>
+        
+        <div class="secTitle">Dokumen &amp; Surat Menyurat <span class="chev"></span></div>
+        <a class="navItem sub" href="#"><span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M6 2h9l3 3v17H6V2Zm8 1v3h3"/></svg>
+        </span>Dokumen Digital</a>
+
+        <div class="secTitle">Laporan &amp; Rancangan Strategis <span class="chev"></span></div>
+        <a class="navItem sub" href="#"><span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M4 19h16v2H4v-2Zm2-3h3V8H6v8Zm5 0h3V4h-3v12Zm5 0h3v-6h-3v6Z"/></svg>
+        </span>Rancangan kerja &amp; Laporan</a>
+
+      </nav>
+    </aside>
+
+    <!-- ===== MAIN ===== -->
+    <main class="main">
+
+      <!-- Blue header background -->
+      <div class="headerBg">
+        <header class="topbar">
+          <button class="hamburger" type="button" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+
+          <div class="brand">
+            <span class="bisa">BISA</span>
+            <span class="media">MEDIA</span>
+          </div>
+
+          <div class="topRight">
+            <button class="bell" type="button" aria-label="Notif">
+              <span class="dot"></span>
+              <svg viewBox="0 0 24 24"><path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2Zm6-6V11a6 6 0 1 0-12 0v5L4 18v1h16v-1l-2-2Z"/></svg>
+            </button>
+
+            <button class="roleBtn" id="roleBtn" type="button" aria-label="Role">
+              <span>MANAJER OPERASIONAL</span>
+              <i class="caret"></i>
+            </button>
+
+            <div class="roleMenu" id="roleMenu" aria-hidden="true">
+              <a href="#">Profile</a>
+              <a href="#">Settings</a>
+              <div class="sep"></div>
+              <a href="#">Logout</a>
+            </div>
+          </div>
+        </header>
+
+        <section class="titleCard">
+          <h1>Jabatan</h1>
+        </section>
+      </div>
+
+      <!-- Content -->
+      <div class="content">
+        <div class="grid">
+
+          <!-- LEFT CARD -->
+          <section class="card left">
+            <div class="cardLine"></div>
+
+            <div class="cardHead">
+              <div class="cardHeadTitle">Tabel Data Jabatan</div>
+            </div>
+
+            <div class="cardBody">
+              <div class="searchRow">
+                <div class="searchBox">
+                  <svg class="mag" viewBox="0 0 24 24"><path d="M10 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8Zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6Zm11 18-6-6 1.4-1.4 6 6Z"/></svg>
+                  <input id="q" type="text" placeholder="cari">
+                </div>
+              </div>
+
+              <div class="tableBox">
+                <table class="tbl">
+                  <colgroup>
+                    <col style="width:90px" />
+                    <col />
+                    <col />
+                    <col style="width:180px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Jabatan</th>
+                      <th>Deskripsi</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody id="deptRows">
+                    <tr>
+                      <td class="tc">1</td>
+                      <td class="tc link"><a href="#">Leader</a></td>
+                      <td class="tc link"><a href="#">Staff</a></td>
+                      <td class="tc">
+                        <div class="aksi">
+                          <button class="act actBlue" type="button" aria-label="Edit">
+                            <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.8 9.95l-3.75-3.75L3 17.25Zm18-11.5a1 1 0 0 0 0-1.4l-1.35-1.35a1 1 0 0 0-1.4 0l-1.1 1.1 3.75 3.75 1.1-1.1Z"/></svg>
+                          </button>
+                          <button class="act actRed" type="button" aria-label="Hapus">
+                            <svg viewBox="0 0 24 24"><path d="M6 7h12l-1 14H7L6 7Zm3-3h6l1 2H8l1-2Z"/></svg>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="tc">2</td>
+                      <td class="tc link"><a href="#">Mengkoordinasi tim.</a></td>
+                      <td class="tc link"><a href="#">Melaksanakan tugas.</a></td>
+                      <td class="tc">
+                        <div class="aksi">
+                          <button class="act actBlue" type="button" aria-label="Edit">
+                            <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.8 9.95l-3.75-3.75L3 17.25Zm18-11.5a1 1 0 0 0 0-1.4l-1.35-1.35a1 1 0 0 0-1.4 0l-1.1 1.1 3.75 3.75 1.1-1.1Z"/></svg>
+                          </button>
+                          <button class="act actRed" type="button" aria-label="Hapus">
+                            <svg viewBox="0 0 24 24"><path d="M6 7h12l-1 14H7L6 7Zm3-3h6l1 2H8l1-2Z"/></svg>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- RIGHT CARD -->
+          <section class="card right">
+            <div class="cardLine"></div>
+
+            <div class="cardHead">
+              <div class="cardHeadTitle">Tambah Data Jabatan</div>
+            </div>
+
+            <div class="cardBody">
+              <div class="form">
+                <label class="lbl">Nama Jabatan</label>
+                <input id="nama" class="inp" type="text">
+
+                <label class="lbl mt">Deskripsi</label>
+                <textarea id="desc" class="ta"></textarea>
+
+                <div class="btnRow">
+                  <button id="saveBtn" class="save" type="button">
+                    <svg viewBox="0 0 24 24"><path d="M17 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7l-4-4ZM12 19a3 3 0 1 1 3-3 3 3 0 0 1-3 3ZM6 8V5h10v3H6Z"/></svg>
+                    <span>Simpan</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

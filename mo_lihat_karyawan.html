@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Departement</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <div class="sideTop">
+        <div class="sideBg"></div>
+        <div class="sideUser">
+          <img class="avatar" src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=240&auto=format&fit=crop" alt="avatar">
+          <div class="uname">{Nama}</div>
+
+          <div class="uBtns">
+            <button class="uBtn" type="button" aria-label="User">
+              <svg viewBox="0 0 24 24"><path d="M12 12a4.2 4.2 0 1 0-4.2-4.2A4.2 4.2 0 0 0 12 12Zm0 2c-4.4 0-8 2.2-8 5v1h16v-1c0-2.8-3.6-5-8-5Z"/></svg>
+            </button>
+            <button class="uBtn" type="button" aria-label="Power">
+              <svg viewBox="0 0 24 24"><path d="M11 2h2v10h-2V2Zm7.3 3.7-1.4 1.4A8 8 0 1 1 7.1 7.1L5.7 5.7A10 10 0 1 0 18.3 5.7Z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="navItem" href="mo_dashboard.html"><span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M3 3h8v8H3V3Zm10 0h8v5h-8V3ZM3 13h8v8H3v-8Zm10 7v-10h8v10h-8Z"/></svg>
+        </span>Dashboard</a>
+
+        <a class="navItem" href="mo_kalender.html"><span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm1 17a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V10h16v11Z"/></svg>
+        </span>Kalender</a>
+
+        <div class="secTitle">SDM &amp; Kehadiran <span class="chev"></span></div>
+        <a class="navItem sub active" href="mo_karyawan.html"><span class="bar"></span><span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm-8 9v-1c0-3 4-5 8-5s8 2 8 5v1H4Z"/></svg>
+        </span>Data Karyawan</a>
+        <a class="navItem sub" href="mo_departement.html">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4V4Zm3 4h10v2H7V8Zm0 4h7v2H7v-2Z"/></svg></span>
+          <span>Departement</span></a>
+        <a class="navItem sub" href="mo_jabatan.html"></span><span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M6 2h12v4H6V2Zm-2 6h16v14H4V8Zm4 4h8v2H8v-2Zm0 4h6v2H8v-2Z"/></svg>
+        </span>Jabatan</a>
+        <a class="navItem sub" href="mo_rekap_absensi.html"><span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M6 2h12v6H6V2Zm-2 8h16v12H4V10Zm4 3h8v2H8v-2Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2Zm13 6H4v14h16V8ZM6 10h5v5H6v-5Z"/></svg>
+        </span>Rekap Absensi + Lembur</a>
+        
+        <div class="secTitle">Dokumen &amp; Surat Menyurat <span class="chev"></span></div>
+        <a class="navItem sub" href="#"><span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M6 2h9l3 3v17H6V2Zm8 1v3h3"/></svg>
+        </span>Dokumen Digital</a>
+
+        <div class="secTitle">Laporan &amp; Rancangan Strategis <span class="chev"></span></div>
+        <a class="navItem sub" href="#"><span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M4 19h16v2H4v-2Zm2-3h3V8H6v8Zm5 0h3V4h-3v12Zm5 0h3v-6h-3v6Z"/></svg>
+        </span>Rancangan kerja &amp; Laporan</a>
+
+      </nav>
+    </aside>
+
+    <!-- ===== MAIN ===== -->
+    <main class="main">
+
+      <!-- Blue header background -->
+      <div class="headerBg">
+        <header class="topbar">
+          <button class="hamburger" type="button" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+
+          <div class="brand">
+            <span class="bisa">BISA</span>
+            <span class="media">MEDIA</span>
+          </div>
+
+          <div class="topRight">
+            <button class="bell" type="button" aria-label="Notif">
+              <span class="dot"></span>
+              <svg viewBox="0 0 24 24"><path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2Zm6-6V11a6 6 0 1 0-12 0v5L4 18v1h16v-1l-2-2Z"/></svg>
+            </button>
+
+            <button class="roleBtn" id="roleBtn" type="button" aria-label="Role">
+              <span>MANAJER OPERASIONAL</span>
+              <i class="caret"></i>
+            </button>
+
+            <div class="roleMenu" id="roleMenu" aria-hidden="true">
+              <a href="#">Profile</a>
+              <a href="#">Settings</a>
+              <div class="sep"></div>
+              <a href="#">Logout</a>
+            </div>
+          </div>
+        </header>
+
+        <section class="titleCard">
+          <h1>Data Karyawan</h1>
+        </section>
+      </div>
+
+      <!-- ===== CONTENT ===== -->
+      <section class="content">
+        <section class="panel">
+          <div class="panelTopLine"></div>
+
+          <div class="panelHead">
+            <div class="panelTitle">
+              <span class="panelIco">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4V4Zm3 4h10v2H7V8Zm0 4h7v2H7v-2Z"/></svg>
+              </span>
+              Data Karyawan
+            </div>
+          </div>
+
+          <div class="panelBody">
+            <!-- FOTO -->
+            <div class="fieldGroup">
+              <div class="label">Foto</div>
+              <div class="photoBox">
+                <img class="photoImg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='220'%3E%3Crect width='360' height='220' fill='%238a5bd1'/%3E%3Ccircle cx='180' cy='108' r='58' fill='%23c7a6f0' opacity='.55'/%3E%3Ccircle cx='180' cy='188' r='80' fill='%23c7a6f0' opacity='.35'/%3E%3Cpath d='M140 75c20-24 60-24 80 0' fill='none' stroke='%23fff' stroke-width='8' stroke-linecap='round' opacity='.8'/%3E%3Cpath d='M126 82c35-45 113-45 148 0' fill='none' stroke='%23fff' stroke-width='10' stroke-linecap='round' opacity='.7'/%3E%3C/svg%3E"
+                     alt="Foto">
+              </div>
+            </div>
+
+            <!-- GRID FORM -->
+            <div class="formGrid">
+              <div class="fg">
+                <div class="label">Nama Lengkap</div>
+                <input class="input" value="Maspam" readonly>
+              </div>
+
+              <div class="fg">
+                <div class="label">Email</div>
+                <input class="input" value="pam@gmail.com" readonly>
+              </div>
+
+              <div class="fg">
+                <div class="label">No. HP</div>
+                <input class="input" value="085212345678" readonly>
+              </div>
+
+              <div class="fg">
+                <div class="label">Tanggal Lahir</div>
+                <input class="input" value="01-12-1995" readonly>
+              </div>
+
+              <div class="fg span2">
+                <div class="label">Alamat</div>
+                <input class="input" value="Kab. Tasikmalaya, Jawa Barat" readonly>
+              </div>
+
+              <div class="fg">
+                <div class="label">Jenis Kelamin</div>
+                <input class="input" value="Laki - Laki" readonly>
+              </div>
+
+              <div class="fg">
+                <div class="label">Nama ayah</div>
+                <input class="input" value="Bayuu yuyuyu" readonly>
+              </div>
+
+              <div class="fg">
+                <div class="label">Anak ke</div>
+                <select class="input select" disabled>
+                  <option selected>11</option>
+                </select>
+              </div>
+
+              <div class="fg">
+                <div class="label">Dari</div>
+                <select class="input select" disabled>
+                  <option selected>23</option>
+                </select>
+              </div>
+
+              <div class="fg">
+                <div class="label">Pendidikan terakhir</div>
+                <input class="input" value="SD" readonly>
+              </div>
+
+              <div class="fg">
+                <div class="label">Tanggal Masuk</div>
+                <input class="input" value="20 -12-2020" readonly>
+              </div>
+
+              <div class="fg">
+                <div class="label">Status Kerja</div>
+                <input class="input" value="PKWT ( Perjanjian Kerja Waktu Tertentu)" readonly>
+              </div>
+
+              <div class="fg">
+                <div class="label">Departement</div>
+                <select class="input select" disabled>
+                  <option selected>Sosial Media</option>
+                </select>
+              </div>
+
+              <div class="fg">
+                <div class="label">Jabatan</div>
+                <input class="input" value="Leader" readonly>
+              </div>
+
+              <div class="fg">
+                <div class="label">No. Rek</div>
+                <select class="input select" disabled>
+                  <option selected>123456789</option>
+                </select>
+              </div>
+
+              <div class="fg span2">
+                <div class="label">Password</div>
+                <input class="input" value="1223334444" readonly>
+              </div>
+            </div>
+
+            <!-- FOOT ACTION -->
+            <div class="panelActions">
+              <a class="btnBack" href="#">
+                <span class="btnIco">
+                  <!-- <svg viewBox="0 0 24 24"><path d="M14.5 5 7.5 12l7 7 1.5-1.5L10.5 12 16 6.5 14.5 5Z"/></svg> -->
+                </span>
+                Simpan
+              </a>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

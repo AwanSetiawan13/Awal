@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kalender</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <div class="sideTop">
+        <div class="sideBg"></div>
+
+        <div class="sideUser">
+          <img class="avatar"
+               src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=240&auto=format&fit=crop"
+               alt="avatar">
+          <div class="uname">{Nama}</div>
+
+          <div class="uBtns">
+            <button class="uBtn" type="button" aria-label="User">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 12a4.2 4.2 0 1 0-4.2-4.2A4.2 4.2 0 0 0 12 12Zm0 2c-4.4 0-8 2.2-8 5v1h16v-1c0-2.8-3.6-5-8-5Z"/>
+              </svg>
+            </button>
+            <button class="uBtn" type="button" aria-label="Power">
+              <svg viewBox="0 0 24 24">
+                <path d="M11 2h2v10h-2V2Zm7.3 3.7-1.4 1.4A8 8 0 1 1 7.1 7.1L5.7 5.7A10 10 0 1 0 18.3 5.7Z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="navItem" href="mo_dashboard.html"><span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M3 3h8v8H3V3Zm10 0h8v5h-8V3ZM3 13h8v8H3v-8Zm10 7v-10h8v10h-8Z"/></svg>
+        </span>Dashboard</a>
+
+        <!-- ✅ Kalender aktif -->
+        <a class="navItem active" href="mo_kalender.html">
+          <span class="bar"></span>
+          <span class="ico">
+            <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm1 17a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V10h16v11Z"/></svg>
+          </span>
+          <span>Kalender</span>
+        </a>
+
+        <div class="secTitle">SDM &amp; Kehadiran <span class="chev"></span></div>
+
+        <a class="navItem sub" href="mo_karyawan.html">
+          <span class="ico">
+            <svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm-8 9v-1c0-3 4-5 8-5s8 2 8 5v1H4Z"/></svg>
+          </span>
+          <span>Data Karyawan</span>
+        </a>
+
+        <a class="navItem sub" href="mo_departement.html">
+          <span class="ico">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4V4Zm3 4h10v2H7V8Zm0 4h7v2H7v-2Z"/></svg>
+          </span>
+          <span>Departement</span>
+        </a>
+
+        <!-- ✅ FIX: link Jabatan yang tadi tag-nya rusak -->
+        <a class="navItem sub" href="mo_jabatan.html">
+          <span class="ico">
+            <svg viewBox="0 0 24 24"><path d="M6 2h12v4H6V2Zm-2 6h16v14H4V8Zm4 4h8v2H8v-2Zm0 4h6v2H8v-2Z"/></svg>
+          </span>
+          <span>Jabatan</span>
+        </a>
+
+        <!-- ✅ (opsional) Rekap Absensi: aku rapihin ikon jadi 1 -->
+        <a class="navItem sub" href="mo_rekap_absensi.html">
+          <span class="ico">
+            <svg viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2Zm13 6H4v14h16V8ZM6 10h5v5H6v-5Z"/></svg>
+          </span>
+          <span>Rekap Absensi + Lembur</span>
+        </a>
+
+        <div class="secTitle">Dokumen &amp; Surat Menyurat <span class="chev"></span></div>
+        <a class="navItem sub" href="#">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M6 2h9l3 3v17H6V2Zm8 1v3h3"/></svg></span>
+          <span>Dokumen Digital</span>
+        </a>
+
+        <div class="secTitle">Laporan &amp; Rancangan Strategis <span class="chev"></span></div>
+        <a class="navItem sub" href="#">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 19h16v2H4v-2Zm2-3h3V8H6v8Zm5 0h3V4h-3v12Zm5 0h3v-6h-3v6Z"/></svg></span>
+          <span>Rancangan kerja &amp; Laporan</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- ===== MAIN ===== -->
+    <main class="main">
+
+      <!-- Blue header background -->
+      <div class="headerBg">
+        <header class="topbar">
+          <button class="hamburger" type="button" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+
+          <div class="brand">
+            <span class="bisa">BISA</span>
+            <span class="media">MEDIA</span>
+          </div>
+
+          <div class="topRight">
+            <button class="bell" type="button" aria-label="Notif">
+              <span class="dot"></span>
+              <svg viewBox="0 0 24 24"><path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2Zm6-6V11a6 6 0 1 0-12 0v5L4 18v1h16v-1l-2-2Z"/></svg>
+            </button>
+
+            <button class="roleBtn" id="roleBtn" type="button" aria-label="Role">
+              <span>MANAJER OPERASIONAL</span>
+              <i class="caret"></i>
+            </button>
+
+            <div class="roleMenu" id="roleMenu" aria-hidden="true">
+              <a href="#">Profile</a>
+              <a href="#">Settings</a>
+              <div class="sep"></div>
+              <a href="#">Logout</a>
+            </div>
+          </div>
+        </header>
+
+        <!-- ✅ Title card harus “Kalender” -->
+        <section class="titleCard">
+          <h1>Kalender</h1>
+        </section>
+      </div>
+
+      <!-- ✅ PENTING: bungkus konten agar posisi & padding sama seperti screenshot -->
+      <div class="content">
+
+        <!-- ===== ISI KONTEN KALENDER ===== -->
+        <section class="bmcalPanel">
+          <div class="bmcalLine"></div>
+
+          <div class="bmcalHead">
+            <div class="bmcalTitle">Kalender</div>
+
+            <button class="bmcalPlus" type="button" aria-label="Tambah"
+              onclick="window.location.href='mo_lihat_kalender.html'">
+              <svg viewBox="0 0 24 24"><path d="M11 5h2v14h-2V5Zm-6 6h14v2H5v-2Z"/></svg>
+            </button>
+          </div>
+
+          <div class="bmcalBody">
+            <div class="bmcalWrap">
+
+              <!-- LEFT PANEL -->
+              <aside class="bmcalMini">
+                <div class="bmcalPaper">
+                  <div class="bmcalMonthTop">JANUARY 2026</div>
+
+                  <table class="bmcalMiniTbl" aria-label="Mini Calendar">
+                    <thead>
+                      <tr>
+                        <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+                      </tr>
+                    </thead>
+                    <tbody id="bmcalMiniDays"></tbody>
+                  </table>
+                </div>
+
+                <div class="bmcalLegend">
+                  <div class="bmcalBar bmcalBarRed"></div>
+                  <div class="bmcalSep"></div>
+
+                  <div class="bmcalBar bmcalBarGreen"></div>
+                  <div class="bmcalSep"></div>
+
+                  <div class="bmcalBar bmcalBarBlue"></div>
+                  <div class="bmcalSep"></div>
+
+                  <div class="bmcalBar bmcalBarPeach"></div>
+                  <div class="bmcalSep"></div>
+                </div>
+              </aside>
+
+              <!-- RIGHT AREA -->
+              <section class="bmcalRight">
+                <div class="bmcalMonthNav">
+                  <div class="bmcalPill" id="bmcalMonthLabel">Januari 2026</div>
+                  <button class="bmcalArrow" id="bmcalPrev" type="button" aria-label="Prev">&lt;</button>
+                  <button class="bmcalArrow" id="bmcalNext" type="button" aria-label="Next">&gt;</button>
+                </div>
+
+                <div class="bmcalSchedule">
+                  <div class="bmcalSchHead">
+                    <div class="bmcalCell bmcalJam">Jam</div>
+                    <div class="bmcalCell">4</div>
+                    <div class="bmcalCell">5</div>
+                    <div class="bmcalCell">6</div>
+                    <div class="bmcalCell">7</div>
+                    <div class="bmcalCell">8</div>
+                    <div class="bmcalCell">9</div>
+                    <div class="bmcalCell">10</div>
+                  </div>
+
+                  <div class="bmcalSchBody">
+                    <div class="bmcalBcell"></div>
+                    <div class="bmcalBcell"></div>
+                    <div class="bmcalBcell"></div>
+                    <div class="bmcalBcell"></div>
+                    <div class="bmcalBcell"></div>
+                    <div class="bmcalBcell"></div>
+                    <div class="bmcalBcell"></div>
+                    <div class="bmcalBcell"></div>
+                  </div>
+                </div>
+              </section>
+
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /content -->
+
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

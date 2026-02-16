@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kalender - Bisa Media</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="viewport">
+    <div class="screen" id="screen">
+      <!-- HERO -->
+      <header class="hero" aria-label="Header">
+        <div class="heroTitle">KALENDER</div>
+      </header>
+
+      <!-- PANEL BESAR -->
+      <section class="sheet" aria-label="Konten Kalender">
+        <div class="sheetPad">
+
+          <!-- KOTAK KALENDER (UKURAN DIKUNCI) -->
+          <div class="calendarFrame" aria-label="Kalender Januari 2026">
+            <div class="calViewport">
+              <div class="cal">
+                <div class="calTitle">Januari 2026</div>
+
+                <div class="calHead">
+                  <div class="calH calH--week">v</div>
+                  <div class="calH">Måndag</div>
+                  <div class="calH">Tisdag</div>
+                  <div class="calH">Onsdag</div>
+                  <div class="calH">Torsdag</div>
+                  <div class="calH">Fredag</div>
+                  <div class="calH">Lördag</div>
+                  <div class="calH">Söndag</div>
+                </div>
+
+                <div class="calBody">
+                  <!-- Week 1 -->
+                  <div class="calWeek">1</div>
+                  <div class="calCell isEmpty"></div>
+                  <div class="calCell isEmpty"></div>
+                  <div class="calCell isEmpty"></div>
+                  <div class="calCell"><div class="num">1</div></div>
+                  <div class="calCell"><div class="num">2</div></div>
+                  <div class="calCell hasDots">
+                    <div class="num">3</div>
+                    <div class="dots">
+                      <span class="dot blue"></span>
+                      <span class="dot orange"></span>
+                      <span class="dot red"></span>
+                      <span class="dot green"></span>
+                    </div>
+                  </div>
+                  <div class="calCell"><div class="num">4</div></div>
+
+                  <!-- Week 2 -->
+                  <div class="calWeek">2</div>
+                  <div class="calCell"><div class="num">5</div></div>
+                  <div class="calCell"><div class="num">6</div></div>
+                  <div class="calCell"><div class="num">7</div></div>
+                  <div class="calCell"><div class="num">8</div></div>
+                  <div class="calCell"><div class="num">9</div></div>
+                  <div class="calCell"><div class="num">10</div></div>
+                  <div class="calCell hasDots">
+                    <div class="num">11</div>
+                    <div class="dots">
+                      <span class="dot blue"></span>
+                      <span class="dot red"></span>
+                    </div>
+                  </div>
+
+                  <!-- Week 3 -->
+                  <div class="calWeek">3</div>
+                  <div class="calCell"><div class="num">12</div></div>
+                  <div class="calCell"><div class="num">13</div></div>
+                  <div class="calCell"><div class="num">14</div></div>
+                  <div class="calCell hasDots">
+                    <div class="num">15</div>
+                    <div class="dots">
+                      <span class="dot blue"></span>
+                      <span class="dot orange"></span>
+                      <span class="dot red"></span>
+                    </div>
+                  </div>
+                  <div class="calCell"><div class="num">16</div></div>
+                  <div class="calCell"><div class="num">17</div></div>
+                  <div class="calCell"><div class="num">18</div></div>
+
+                  <!-- Week 4 -->
+                  <div class="calWeek">4</div>
+                  <div class="calCell"><div class="num">19</div></div>
+                  <div class="calCell"><div class="num">20</div></div>
+                  <div class="calCell"><div class="num">21</div></div>
+                  <div class="calCell"><div class="num">22</div></div>
+                  <div class="calCell"><div class="num">23</div></div>
+                  <div class="calCell"><div class="num">24</div></div>
+                  <div class="calCell"><div class="num">25</div></div>
+
+                  <!-- Week 5 -->
+                  <div class="calWeek">5</div>
+                  <div class="calCell"><div class="num">26</div></div>
+                  <div class="calCell"><div class="num">27</div></div>
+                  <div class="calCell"><div class="num">28</div></div>
+                  <div class="calCell"><div class="num">29</div></div>
+                  <div class="calCell"><div class="num">30</div></div>
+                  <div class="calCell"><div class="num">31</div></div>
+                  <div class="calCell isEmpty"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- AGENDA -->
+          <div class="agenda" aria-label="Agenda">
+            <div class="agendaGrid">
+              <div class="dayBadge">3</div>
+
+              <div class="cards">
+                <div class="eventCard eventBlue">
+                  <div class="strip"></div>
+                  <div class="eventBody">
+                    <div class="eventTop">
+                      <div class="eventTitle">{Nama Jobdesk}</div>
+                      <div class="eventTag">Jobdesk</div>
+                    </div>
+                    <div class="eventSub">Deskripsi Singkat</div>
+                  </div>
+                </div>
+
+                <div class="eventCard eventOrange">
+                  <div class="strip"></div>
+                  <div class="eventBody">
+                    <div class="eventTop">
+                      <div class="eventTitle">{Nama Project}</div>
+                      <div class="eventTag">Project</div>
+                    </div>
+                    <div class="eventSub">Deskripsi Singkat</div>
+                  </div>
+                </div>
+
+                <div class="eventCard eventRed">
+                  <div class="strip"></div>
+                  <div class="eventBody">
+                    <div class="eventTop">
+                      <div class="eventTitle">{Tempat Meeting}</div>
+                      <div class="eventTag">Meeting</div>
+                    </div>
+                    <div class="eventSub">Jam</div>
+                  </div>
+                </div>
+
+                <div class="eventCard eventGreen">
+                  <div class="strip"></div>
+                  <div class="eventBody">
+                    <div class="eventTop">
+                      <div class="eventTitle">{Tempat Visit}</div>
+                      <div class="eventTag">Visit</div>
+                    </div>
+                    <div class="eventSub">Jam</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bottomFade"></div>
+        </div>
+      </section>
+
+      <!-- BOTTOM NAV -->
+      <nav class="bottomNav" aria-label="Navigasi bawah">
+        <a class="navItem" href="#">
+          <svg viewBox="0 0 24 24" class="navIcon" aria-hidden="true">
+            <path fill="currentColor" d="M12 3 3 10v11h6v-7h6v7h6V10L12 3Z"/>
+          </svg>
+          <div class="navText">Beranda</div>
+        </a>
+
+        <a class="navItem isActive" href="#">
+          <svg viewBox="0 0 24 24" class="navIcon" aria-hidden="true">
+            <path fill="currentColor" d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2Zm13 6H6v12h14V8ZM7.5 10h3v3h-3v-3Zm6 0h3v3h-3v-3Z"/>
+          </svg>
+          <div class="navText">Kalender</div>
+        </a>
+
+        <a class="navItem" href="#">
+          <svg viewBox="0 0 24 24" class="navIcon" aria-hidden="true">
+            <path fill="currentColor" d="M7 7a4 4 0 1 1 8 0v2h2a4 4 0 0 1 0 8h-2v-2h2a2 2 0 0 0 0-4h-2V7a2 2 0 1 0-4 0v10H9V9H7a2 2 0 0 0 0 4h2v2H7a4 4 0 0 1 0-8h2V7Z"/>
+          </svg>
+          <div class="navText">Work</div>
+        </a>
+
+        <a class="navItem" href="#">
+          <svg viewBox="0 0 24 24" class="navIcon" aria-hidden="true">
+            <path fill="currentColor" d="M4 4h16v12H7l-3 3V4Zm3 6h10v2H7v-2Zm0-4h10v2H7V6Z"/>
+          </svg>
+          <div class="navText">Diskusi</div>
+        </a>
+
+        <a class="navItem" href="#">
+          <svg viewBox="0 0 24 24" class="navIcon" aria-hidden="true">
+            <path fill="currentColor" d="M12 12a4.2 4.2 0 1 0-4.2-4.2A4.2 4.2 0 0 0 12 12Zm0 2c-4 0-7.5 2-8 6h16c-.5-4-4-6-8-6Z"/>
+          </svg>
+          <div class="navText">Profil</div>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

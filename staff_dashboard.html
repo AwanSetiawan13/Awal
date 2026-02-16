@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bisa Media Dashboard (Mock)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Viewport untuk auto-scale supaya tampilannya tetap proporsional -->
+  <div class="viewport">
+    <!-- DESAIN ukuran dasar: 360 x 820 -->
+    <div class="screen" id="screen">
+
+      <!-- HERO -->
+      <header class="hero">
+        <div class="hero__top">
+          <div class="brand">
+            <!-- Placeholder logo (ganti src="logo.png") -->
+            <div class="brand__icon">
+              <img class="brand__img" src="Foto/Logo2.png" alt="" onerror="this.style.display='none'" />
+            </div>
+            <div class="brand__text">
+              <div class="brand__line">BISA</div>
+              <div class="brand__line">MEDIA</div>
+            </div>
+          </div>
+
+          <button class="bell" type="button" aria-label="Notifikasi">
+            <svg viewBox="0 0 24 24" class="bell__svg" aria-hidden="true">
+              <path fill="currentColor" d="M12 22a2.25 2.25 0 0 0 2.12-1.5H9.88A2.25 2.25 0 0 0 12 22Zm7-6.25c-1.33-1.18-2-2.53-2-5.25a5 5 0 1 0-10 0c0 2.72-.67 4.07-2 5.25-.44.39-.15 1.25.45 1.25h15.1c.6 0 .89-.86.45-1.25Z"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="hero__mid">
+          <div class="greet">
+            <div class="greet__small">Selamat Pagi,</div>
+            <div class="greet__name">Nama</div>
+            <div class="greet__role">Sosial Media</div>
+          </div>
+
+          <!-- Placeholder foto profil (ganti src="avatar.jpg") -->
+          <div class="avatarWrap">
+            <img class="avatar" src="avatar.jpg" alt="" onerror="this.style.display='none'" />
+            <div class="avatarPh" aria-hidden="true"></div>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT -->
+      <main class="content">
+        <!-- TIME CARD -->
+        <section class="timeCard">
+          <div class="timeCard__time">07•59 AM</div>
+          <div class="timeCard__date">Jum’at, 12-12-2025</div>
+
+          <div class="timeCard__row">
+            <div class="timeCard__col">
+              <div class="timeCard__label">Absen Masuk</div>
+              <div class="timeCard__value">07:58 AM</div>
+            </div>
+
+            <div class="timeCard__col">
+              <div class="timeCard__label">Absen Keluar</div>
+              <div class="timeCard__value">Belum Absen</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- MENU GRID -->
+        <section class="menu">
+          <button class="menuItem" type="button">
+            <div class="menuBox">
+              <!-- Kehadiran -->
+              <svg viewBox="0 0 24 24" class="menuIcon" aria-hidden="true">
+                <path fill="currentColor" d="M4 4h16v16H4V4Zm2 2v12h12V6H6Zm2 11h8v-1.5c0-2-2-3-4-3s-4 1-4 3V17Zm4-6.3a2.3 2.3 0 1 0 0-4.6 2.3 2.3 0 0 0 0 4.6Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel">Kehadiran</div>
+          </button>
+
+          <button class="menuItem" type="button">
+            <div class="menuBox">
+              <!-- Milestone -->
+              <svg viewBox="0 0 24 24" class="menuIcon" aria-hidden="true">
+                <path fill="currentColor" d="M7 6a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm10 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM7 14a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm2-6h4v2H9V8Zm4 0h2v6h-2V8ZM9 16h4v2H9v-2Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel">Milestone</div>
+          </button>
+
+          <button class="menuItem" type="button">
+            <div class="menuBox">
+              <!-- Pengajuan -->
+              <svg viewBox="0 0 24 24" class="menuIcon" aria-hidden="true">
+                <path fill="currentColor" d="M6 3h9l3 3v15H6V3Zm2 2v14h8V7h-3V5H8Zm1 6h6v1.8H9V11Zm0 3h6v1.8H9V14Zm9.2-5.5 1.3 1.3-5.4 5.4-1.8.5.5-1.8 5.4-5.4Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel">Pengajuan</div>
+          </button>
+
+          <button class="menuItem" type="button">
+            <div class="menuBox">
+              <!-- Laporan (bell alert) -->
+              <svg viewBox="0 0 24 24" class="menuIcon" aria-hidden="true">
+                <path fill="currentColor" d="M12 22a2.2 2.2 0 0 0 2.1-1.4H9.9A2.2 2.2 0 0 0 12 22Zm6.7-6.2c-1.2-1-1.7-2.2-1.7-4.7a5 5 0 1 0-10 0c0 2.5-.5 3.7-1.7 4.7-.4.3-.1 1 .4 1h12.6c.5 0 .8-.7.4-1ZM12 7.2c.5 0 .9.4.9.9v3.8a.9.9 0 1 1-1.8 0V8.1c0-.5.4-.9.9-.9Zm0 8.2a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel">Laporan</div>
+          </button>
+
+          <button class="menuItem" type="button">
+            <div class="menuBox">
+              <!-- Kinerja -->
+              <svg viewBox="0 0 24 24" class="menuIcon" aria-hidden="true">
+                <path fill="currentColor" d="M4 19h16v2H4v-2Zm2-2V9h3v8H6Zm5 0V5h3v12h-3Zm5 0v-6h3v6h-3Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel">Kinerja</div>
+          </button>
+
+          <button class="menuItem" type="button">
+            <div class="menuBox">
+              <!-- Payroll -->
+              <svg viewBox="0 0 24 24" class="menuIcon" aria-hidden="true">
+                <path fill="currentColor" d="M12 3c4.4 0 8 3.6 8 8s-3.6 8-8 8-8-3.6-8-8 3.6-8 8-8Zm0 2C8.7 5 6 7.7 6 11s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6Zm-1 3h2v1.1c1.3.2 2.3 1 2.6 2.2l-1.9.6c-.2-.7-.7-1.1-1.7-1.1-.9 0-1.5.3-1.5.9 0 .6.7.8 1.8 1.1 1.7.4 3.5 1 3.5 3 0 1.5-1.1 2.5-2.8 2.8V19h-2v-1.1c-1.6-.2-2.8-1.2-3.1-2.7l2-.5c.2.9 1 1.4 2.1 1.4 1 0 1.7-.4 1.7-1.1 0-.6-.6-.9-2-1.2-1.7-.4-3.3-1-3.3-2.9 0-1.4 1-2.3 2.7-2.6V8Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel">Payroll</div>
+          </button>
+
+          <button class="menuItem" type="button">
+            <div class="menuBox">
+              <!-- Dokumen -->
+              <svg viewBox="0 0 24 24" class="menuIcon" aria-hidden="true">
+                <path fill="currentColor" d="M6 3h9l3 3v15H6V3Zm2 2v14h8V7h-3V5H8Zm3 6h2V9h2v2h-2v2h-2v-2H9V9h2v2Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel">Dokumen</div>
+          </button>
+
+          <button class="menuItem" type="button">
+            <div class="menuBox">
+              <!-- Lembur -->
+              <svg viewBox="0 0 24 24" class="menuIcon" aria-hidden="true">
+                <path fill="currentColor" d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9Zm0 2a7 7 0 1 1-7 7 7 7 0 0 1 7-7Zm-1 2h2v5.2l3.6 2.1-1 1.7L11 13V7Zm8.3 11.2h-2v-2h2v2Zm0 3h-2v-2h2v2Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel">Lembur</div>
+          </button>
+
+          <!-- Row 3 - only left -->
+          <button class="menuItem menuItem--single" type="button">
+            <div class="menuBox">
+              <!-- Jadwal Piket -->
+              <svg viewBox="0 0 24 24" class="menuIcon" aria-hidden="true">
+                <path fill="currentColor" d="M7 2h2v2h6V2h2v2h2v18H5V4h2V2Zm12 6H7v12h12V8Zm-9 2h2v2h-2v-2Zm0 4h2v2h-2v-2Zm4-4h2v2h-2v-2Zm-1 4h2l-3 6h-2l3-6Z"/>
+              </svg>
+            </div>
+            <div class="menuLabel">Jadwal<br/>Piket</div>
+          </button>
+        </section>
+      </main>
+
+      <!-- BOTTOM NAV -->
+      <nav class="bottomNav" aria-label="Navigasi bawah">
+        <a class="navItem is-active" href="#">
+          <svg viewBox="0 0 24 24" class="navIcon" aria-hidden="true">
+            <path fill="currentColor" d="M12 3 3 10v11h6v-7h6v7h6V10L12 3Z"/>
+          </svg>
+          <div class="navText">Beranda</div>
+        </a>
+
+        <a class="navItem" href="#">
+          <svg viewBox="0 0 24 24" class="navIcon" aria-hidden="true">
+            <path fill="currentColor" d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2Zm13 6H6v12h14V8ZM7.5 10h3v3h-3v-3Zm6 0h3v3h-3v-3Z"/>
+          </svg>
+          <div class="navText">Kalender</div>
+        </a>
+
+        <a class="navItem" href="#">
+          <svg viewBox="0 0 24 24" class="navIcon" aria-hidden="true">
+            <path fill="currentColor" d="M7 7a4 4 0 1 1 8 0v2h2a4 4 0 0 1 0 8h-2v-2h2a2 2 0 0 0 0-4h-2V7a2 2 0 1 0-4 0v10H9V9H7a2 2 0 0 0 0 4h2v2H7a4 4 0 0 1 0-8h2V7Z"/>
+          </svg>
+          <div class="navText">Work</div>
+        </a>
+
+        <a class="navItem" href="#">
+          <svg viewBox="0 0 24 24" class="navIcon" aria-hidden="true">
+            <path fill="currentColor" d="M4 4h16v12H7l-3 3V4Zm3 6h10v2H7v-2Zm0-4h10v2H7V6Z"/>
+          </svg>
+          <div class="navText">Diskusi</div>
+        </a>
+
+        <a class="navItem" href="#">
+          <svg viewBox="0 0 24 24" class="navIcon" aria-hidden="true">
+            <path fill="currentColor" d="M12 12a4.2 4.2 0 1 0-4.2-4.2A4.2 4.2 0 0 0 12 12Zm0 2c-4 0-7.5 2-8 6h16c-.5-4-4-6-8-6Z"/>
+          </svg>
+          <div class="navText">Profil</div>
+        </a>
+      </nav>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

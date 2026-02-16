@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bisa Media - User Role</title>
+
+  <!-- Font mirip di gambar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <div class="sidebarProfile">
+        <div class="sidebarProfile__bg"></div>
+
+        <div class="sidebarProfile__content">
+          <img
+            class="sidebarProfile__avatar"
+            alt="avatar"
+            src="https://teknogram.id/gallery/foto-profil-wa/keren/pp-wa-kosong-keren-5.jpg"
+          />
+          <div class="sidebarProfile__name">{Nama}</div>
+
+          <div class="sidebarProfile__actions">
+            <button class="miniBtn" type="button" aria-label="Profile">
+              <!-- user icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 12a4.2 4.2 0 1 0-4.2-4.2A4.2 4.2 0 0 0 12 12Zm0 2c-4.4 0-8 2.2-8 5v1h16v-1c0-2.8-3.6-5-8-5Z"/>
+              </svg>
+            </button>
+            <button class="miniBtn" type="button" aria-label="Logout">
+              <!-- power icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M11 2h2v10h-2V2Zm7.3 3.7-1.4 1.4A8 8 0 1 1 7.1 7.1L5.7 5.7A10 10 0 1 0 18.3 5.7Z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sideNav" aria-label="Sidebar Navigation">
+        <a class="navItem " href="admin_dashboard.html">
+          <span class="navIco">
+            <svg viewBox="0 0 24 24"><path d="M3 3h8v8H3V3Zm10 0h8v5h-8V3ZM3 13h8v8H3v-8Zm10 7v-10h8v10h-8Z"/></svg>
+          </span>
+          <span>Dashboard</span>
+        </a>
+        <a class="navItem is-active" href="admin_kalender.html">
+          <span class="activeBar"></span>
+          <span class="navIco">
+            <svg viewBox="0 0 24 24"><path d="M3 3h8v8H3V3Zm10 0h8v5h-8V3ZM3 13h8v8H3v-8Zm10 7v-10h8v10h-8Z"/></svg>
+          </span>
+          <span>Kalender</span>
+        </a>
+
+        <div class="navSection is-open">
+          <button class="sectionHdr" type="button">
+            <span class="sectionLbl">Kehadiran &amp; Jam Kerja</span>
+            <span class="chev"></span>
+          </button>
+          <div class="sectionBody">
+            <a class="navItem" href="admin_rekap_absen.html"><span class="navIco"><svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm-8 9v-1c0-3 4-5 8-5s8 2 8 5v1H4Z"/></svg></span>Rekap Absensi</a>
+            <a class="navItem" href="admin_jam_masuk&keluar.html"><span class="navIco"><svg viewBox="0 0 24 24"><path d="M7 3h10v2H7V3ZM5 7h14v14H5V7Zm3 3v2h8v-2H8Zm0 4v2h6v-2H8Z"/></svg></span>Jam Masuk & Keluar</a>
+          </div>
+        </div>
+
+        <div class="navSection is-open">
+          <button class="sectionHdr" type="button">
+            <span class="sectionLbl">Dokumen &amp; Surat Menyurat</span>
+            <span class="chev"></span>
+          </button>
+          <div class="sectionBody">
+            <a class="navItem" href="admin_dokumen_digitall.html"><span class="navIco"><svg viewBox="0 0 24 24"><path d="M6 2h9l3 3v17H6V2Zm8 1v3h3"/></svg></span>Dokumen Digital</a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- ===== MAIN ===== -->
+    <main class="main">
+      <!-- area biru atas -->
+      <div class="headerBg">
+        <header class="topbar">
+          <button class="hamburger" type="button" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+
+          <div class="brand">
+            <span class="brand__bisa">BISA</span>
+            <span class="brand__media">MEDIA</span>
+          </div>
+
+          <div class="topbarRight">
+            <button class="notifBtn" type="button" aria-label="Notifications">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2Zm6-6V11a6 6 0 1 0-12 0v5L4 18v1h16v-1l-2-2Z"/>
+              </svg>
+            </button>
+
+            <button class="userDrop" id="userDrop" type="button" aria-label="User">
+              <span class="userDrop__text">ADMIN</span>
+              <span class="userDrop__caret"></span>
+            </button>
+
+            <div class="userMenu" id="userMenu" role="menu" aria-hidden="true">
+              <a href="#" role="menuitem">Profile</a>
+              <a href="#" role="menuitem">Settings</a>
+              <div class="sep"></div>
+              <a href="#" role="menuitem">Logout</a>
+            </div>
+          </div>
+        </header>
+
+        <!-- card judul halaman -->
+        <section class="pageTitleCard">
+          <h1>Kalender</h1>
+        </section>
+      </div>
+
+      <!-- ✅ PENTING: bungkus konten agar posisi & padding sama seperti screenshot -->
+      <div class="content">
+
+        <!-- ===== ISI KONTEN KALENDER ===== -->
+        <section class="bmcalPanel">
+          <div class="bmcalLine"></div>
+
+          <div class="bmcalHead">
+            <div class="bmcalTitle">Kalender</div>
+
+            <button class="bmcalPlus" type="button" aria-label="Tambah"
+              onclick="window.location.href='admin_lihat_kalender.html'">
+              <svg viewBox="0 0 24 24"><path d="M11 5h2v14h-2V5Zm-6 6h14v2H5v-2Z"/></svg>
+            </button>
+          </div>
+
+          <div class="bmcalBody">
+            <div class="bmcalWrap">
+
+              <!-- LEFT PANEL -->
+              <aside class="bmcalMini">
+                <div class="bmcalPaper">
+                  <div class="bmcalMonthTop">JANUARY 2026</div>
+
+                  <table class="bmcalMiniTbl" aria-label="Mini Calendar">
+                    <thead>
+                      <tr>
+                        <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+                      </tr>
+                    </thead>
+                    <tbody id="bmcalMiniDays"></tbody>
+                  </table>
+                </div>
+
+                <div class="bmcalLegend">
+                  <div class="bmcalBar bmcalBarRed"></div>
+                  <div class="bmcalSep"></div>
+
+                  <div class="bmcalBar bmcalBarGreen"></div>
+                  <div class="bmcalSep"></div>
+
+                  <div class="bmcalBar bmcalBarBlue"></div>
+                  <div class="bmcalSep"></div>
+
+                  <div class="bmcalBar bmcalBarPeach"></div>
+                  <div class="bmcalSep"></div>
+                </div>
+              </aside>
+
+              <!-- RIGHT AREA -->
+              <section class="bmcalRight">
+                <div class="bmcalMonthNav">
+                  <div class="bmcalPill" id="bmcalMonthLabel">Januari 2026</div>
+                  <button class="bmcalArrow" id="bmcalPrev" type="button" aria-label="Prev">&lt;</button>
+                  <button class="bmcalArrow" id="bmcalNext" type="button" aria-label="Next">&gt;</button>
+                </div>
+
+                <div class="bmcalSchedule">
+                  <div class="bmcalSchHead">
+                    <div class="bmcalCell bmcalJam">Jam</div>
+                    <div class="bmcalCell">4</div>
+                    <div class="bmcalCell">5</div>
+                    <div class="bmcalCell">6</div>
+                    <div class="bmcalCell">7</div>
+                    <div class="bmcalCell">8</div>
+                    <div class="bmcalCell">9</div>
+                    <div class="bmcalCell">10</div>
+                  </div>
+
+                  <div class="bmcalSchBody">
+                    <div class="bmcalBcell"></div>
+                    <div class="bmcalBcell"></div>
+                    <div class="bmcalBcell"></div>
+                    <div class="bmcalBcell"></div>
+                    <div class="bmcalBcell"></div>
+                    <div class="bmcalBcell"></div>
+                    <div class="bmcalBcell"></div>
+                    <div class="bmcalBcell"></div>
+                  </div>
+                </div>
+              </section>
+
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /content -->
+
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
