@@ -2752,3 +2752,89 @@ select.input:disabled{
 @media (max-width: 900px){
   .sidebar{display:none;}
 }
+
+
+/* ==== */
+
+/* folder boxes */
+.folderRow{
+  display:flex;
+  gap:22px;
+  align-items:center;
+  margin-bottom:18px;
+  width:560px; /* biar kanan masih kosong seperti gambar */
+}
+.folderBox{
+  width:260px;
+  height:86px;
+  border:2px solid #bdbdbd;
+  border-radius:8px;
+  background:#fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  font-weight:800;
+  color:#3e3e3e;
+}
+
+/* table */
+.docTableWrap{
+  border:1.6px solid #b9b9b9;
+  border-radius:8px;
+  overflow:hidden;
+}
+.docTable{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  font-size:13px;
+}
+.docTable thead th{
+  background:var(--beige);
+  padding:14px 14px;
+  text-align:center;
+  font-weight:800;
+  color:#4e4e4e;
+  border-bottom:1px solid #d7d2be;
+}
+.docTable tbody td{
+  padding:14px 14px;
+  border-bottom:0;
+}
+.docName{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.docLogo{
+  width:40px;height:54px;
+  border:2px solid #9a9a9a;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:9px;
+  font-weight:800;
+  color:#3b3b3b;
+  background:#fff;
+  line-height:1.05;
+}
+.docLogo.word{background:#fffbe8}
+.docText{color:#2e2e2e}
+.docDate{
+  width:220px;
+  color:#2e2e2e;
+}
+
+/* responsive (desktop tetap mirip) */
+@media (max-width:1200px){
+  .titleCard,.content .container{width:92%}
+  .brand{margin-left:0}
+}
+@media (max-width:980px){
+  .sidebar{display:none}
+  .titleCard,.content .container{width:94%}
+  .folderRow{width:auto}
+}

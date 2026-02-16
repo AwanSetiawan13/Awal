@@ -43,13 +43,14 @@
         </span>Kalender</a>
 
         <div class="secTitle">SDM &amp; Kehadiran <span class="chev"></span></div>
-        <a class="navItem sub active" href="mo_karyawan.html"><span class="bar"></span><span class="ico">
+        <a class="navItem sub" href="mo_karyawan.html"><span class="ico">
           <svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm-8 9v-1c0-3 4-5 8-5s8 2 8 5v1H4Z"/></svg>
         </span>Data Karyawan</a>
-        <a class="navItem sub" href="mo_departement.html">
+
+        <a class="navItem sub " href="mo_departement.html">
           <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4V4Zm3 4h10v2H7V8Zm0 4h7v2H7v-2Z"/></svg></span>
           <span>Departement</span></a>
-        <a class="navItem sub" href="mo_jabatan.html"></span><span class="ico">
+        <a class="navItem sub" href="mo_jabatan.html"><span class="ico">
           <svg viewBox="0 0 24 24"><path d="M6 2h12v4H6V2Zm-2 6h16v14H4V8Zm4 4h8v2H8v-2Zm0 4h6v2H8v-2Z"/></svg>
         </span>Jabatan</a>
         <a class="navItem sub" href="mo_rekap_absensi.html"><span class="ico">
@@ -58,7 +59,8 @@
         </span>Rekap Absensi + Lembur</a>
         
         <div class="secTitle">Dokumen &amp; Surat Menyurat <span class="chev"></span></div>
-        <a class="navItem sub" href="mo_dokumen_digital.html"><span class="ico">
+        <a class="navItem sub active" href="mo_dokumen_digital.html"><span class="ico">
+           <span class="bar"></span>
           <svg viewBox="0 0 24 24"><path d="M6 2h9l3 3v17H6V2Zm8 1v3h3"/></svg>
         </span>Dokumen Digital</a>
 
@@ -105,95 +107,67 @@
           </div>
         </header>
 
-        <section class="titleCard">
-          <h1>Kalender</h1>
+        <!-- card judul halaman -->
+        <section class="pageTitleCard">
+          <h1>Dokument Digital</h1>
         </section>
       </div>
 
-      <!-- CONTENT -->
-      <section class="contentWrap">
-        <article class="panel">
+      <!-- Content -->
+      <div class="content">
+
+        <!-- PANEL 1 -->
+        <section class="panel">
           <div class="panelLine"></div>
-
           <div class="panelHead">
-            <div class="panelTitle">Kalender</div>
+            <div class="panelTitle">Dokument Digital</div>
+
+            <!-- <button class="plusBtn" id="btnTambah" type="button" aria-label="Tambah">
+              <svg viewBox="0 0 24 24"><path d="M11 5h2v14h-2V5Zm-6 6h14v2H5v-2Z"/></svg>
+            </button> -->
           </div>
 
-          <div class="panelBody invBody">
-            <form class="invForm" autocomplete="off">
-              <div class="invRow">
-                <label class="invLbl">Judul</label>
-                <input class="invInp" type="text" />
-              </div>
-
-              <div class="invRow">
-                <label class="invLbl">Tipe</label>
-                <input class="invInp" type="text" placeholder="meeting / visit / campaign / deadline / lainnya" />
-              </div>
-
-              <div class="invRow">
-                <label class="invLbl">Tanggal Mulai</label>
-                <input class="invInp" type="text" />
-              </div>
-
-              <div class="invRow">
-                <label class="invLbl">Tanggal Selesai</label>
-                <input class="invInp" type="text" />
-              </div>
-
-              <div class="invRow">
-                <label class="invLbl">Jam Mulai</label>
-                <input class="invInp" type="text" />
-              </div>
-
-              <div class="invRow">
-                <label class="invLbl">Jam selesai</label>
-                <input class="invInp" type="text" />
-              </div>
-
-              <div class="invRow">
-                <label class="invLbl">Lokasi</label>
-                <input class="invInp" type="text" />
-              </div>
-
-              <div class="invRow">
-                <label class="invLbl">Deskripsi</label>
-                <input class="invInp" type="text" />
-              </div>
-
-              <div class="invRow">
-                <label class="invLbl">Peserta</label>
-                <input class="invInp" type="text" placeholder="opsional, list user/mitra" />
-              </div>
-
-              <div class="invRow">
-                <label class="invLbl">status</label>
-                <input class="invInp" type="text" value="Ini" />
-              </div>
-
-              <div class="invRow">
-                <label class="invLbl">reminder_at</label>
-                <input class="invInp" type="text" value="Itu" />
-              </div>
-
-              <div class="invActions">
-                <button class="btnPill" type="button" id="btnBack">
-                  <svg viewBox="0 0 24 24"><path d="M14.7 6.3 9 12l5.7 5.7-1.4 1.4L6.2 12l7.1-7.1 1.4 1.4Z"/></svg>
-                  Kembali
-                </button>
-
-                <button class="btnPill" type="submit">
-                  <svg viewBox="0 0 24 24"><path d="M17 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7l-4-4ZM7 5h8v4H7V5Zm5 14a3 3 0 1 1 3-3 3 3 0 0 1-3 3Z"/></svg>
-                  Simpan
-                </button>
-              </div>
-            </form>
+         <div class="panelBody">
+            <div class="deptPills">
+              <a class="deptPill" href="mo_dokumen_digital3.html">Admin 1</a>
+              <a class="deptPill" href="mo_dokumen_digital3.html">Admin 2</a>
+              <a class="deptPill" href="mo_dokumen_digital3.html">Admin 3</a>
+            </div>
           </div>
-        </article>
-      </section>
+        </section>
+
+        <!-- PANEL 2 (muncul saat klik tambah) -->
+        <section class="panel" id="formPanel" hidden>
+          <div class="panelLine"></div>
+          <div class="panelHead">
+            <div class="panelTitle">Dokument Digital</div>
+          </div>
+
+          <div class="panelBody panelBodyForm">
+            <div class="formRow">
+              <div class="formLabel">Tambah Departement</div>
+              <input class="formInput" type="text" />
+            </div>
+
+            <div class="formActions">
+              <button class="btnAction" id="btnKembali" type="button">
+                <svg viewBox="0 0 24 24"><path d="M20 11H7.83l4.58-4.59L11 5l-7 7 7 7 1.41-1.41L7.83 13H20v-2Z"/></svg>
+                <span>Kembali</span>
+              </button>
+
+              <button class="btnAction" type="button">
+                <svg viewBox="0 0 24 24"><path d="M17 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7l-4-4Zm-5 16a3 3 0 1 1 3-3 3 3 0 0 1-3 3ZM6 8V5h10v3H6Z"/></svg>
+                <span>Simpan</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /content -->
     </main>
   </div>
 
   <script src="./script.js"></script>
 </body>
 </html>
+

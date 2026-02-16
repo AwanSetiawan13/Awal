@@ -47,8 +47,7 @@
       </div>
 
       <nav class="sideNav" aria-label="Sidebar Navigation">
-        <a class="navItem " href="ceo_dashboard.html">
-
+        <a class="navItem" href="ceo_dashboard.html">
           <span class="navIco">
             <svg viewBox="0 0 24 24"><path d="M3 3h8v8H3V3Zm10 0h8v5h-8V3ZM3 13h8v8H3v-8Zm10 7v-10h8v10h-8Z"/></svg>
           </span>
@@ -63,7 +62,7 @@
           <div class="sectionBody">
             <a class="navItem" href="ceo_karyawan.html"><span class="navIco"><svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm-8 9v-1c0-3 4-5 8-5s8 2 8 5v1H4Z"/></svg></span>Data Karyawan</a>
             <a class="navItem" href="ceo_role.html"><span class="navIco"><svg viewBox="0 0 24 24"><path d="M7 3h10v2H7V3ZM5 7h14v14H5V7Zm3 3v2h8v-2H8Zm0 4v2h6v-2H8Z"/></svg></span>Rekap Absensi + Lembur</a>
-            <a class="navItem is-active" href="ceo_kalender.html"><span class="activeBar"></span><span class="navIco"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm1 17a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V10h16v11Z"/></svg></span>Kalender</a>
+            <a class="navItem" href="ceo_kalender.html"><span class="navIco"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm1 17a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V10h16v11Z"/></svg></span>Kalender</a>
           </div>
         </div>
 
@@ -73,7 +72,7 @@
             <span class="chev"></span>
           </button>
           <div class="sectionBody">
-            <a class="navItem" href="ceo_dokumen_digital.html"><span class="navIco"><svg viewBox="0 0 24 24"><path d="M6 2h9l3 3v17H6V2Zm8 1v3h3"/></svg></span>Dokumen Digital</a>
+            <a class="navItem is-active" href="ceo_dokumen_digital.html"> <span class="activeBar"></span><span class="navIco"><svg viewBox="0 0 24 24"><path d="M6 2h9l3 3v17H6V2Zm8 1v3h3"/></svg></span>Dokumen Digital</a>
           </div>
         </div>
 
@@ -93,7 +92,8 @@
             <span class="chev"></span>
           </button>
           <div class="sectionBody">
-            <a class="navItem" href="ceo_role.html"> 
+            <a class="navItem " href="ceo_role.html">
+              
               <span class="navIco">
                 <svg viewBox="0 0 24 24"><path d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z"/></svg>
               </span>
@@ -148,99 +148,69 @@
 
         <!-- card judul halaman -->
         <section class="pageTitleCard">
-          <h1>Dashboard</h1>
+          <h1>Dokument Digital</h1>
         </section>
       </div>
-<!-- ✅ PENTING: bungkus konten agar posisi & padding sama seperti screenshot -->
-      <div class="content">
 
-        <!-- ===== ISI KONTEN KALENDER ===== -->
-        <section class="bmcalPanel">
-          <div class="bmcalLine"></div>
+      <section class="content">
+        <div class="container">
 
-          <div class="bmcalHead">
-            <div class="bmcalTitle">Kalender</div>
+          <!-- ===== PANEL: DOKUMEN {NAMA} ===== -->
+          <section class="panel">
+            <div class="panelLine"></div>
 
-            <button class="bmcalPlus" type="button" aria-label="Tambah">
+            <header class="panelHead">
+              <h2>Dokument {Nama}</h2>
+
+              <!-- kalau mau klik langsung pindah halaman: ganti href -->
+              <!-- <a class="panelPlus" href="#" aria-label="Tambah">
+                <svg viewBox="0 0 24 24"><path d="M11 5h2v14h-2V5Zm-6 6h14v2H5v-2Z"/></svg>
+              </a> -->
+              <button class="plusBtn" id="btnTambah" type="button" aria-label="Tambah">
               <svg viewBox="0 0 24 24"><path d="M11 5h2v14h-2V5Zm-6 6h14v2H5v-2Z"/></svg>
             </button>
-          </div>
+            </header>
 
-          <div class="bmcalBody">
-            <div class="bmcalWrap">
+            <div class="panelBody">
+              <!-- <div class="folderRow">
+                <a class="folderBox" href="#">Folder A</a>
+                <a class="folderBox" href="#">Folder B</a>
+              </div> -->
 
-              <!-- LEFT PANEL -->
-              <aside class="bmcalMini">
-                <div class="bmcalPaper">
-                  <div class="bmcalMonthTop">JANUARY 2026</div>
-
-                  <table class="bmcalMiniTbl" aria-label="Mini Calendar">
-                    <thead>
-                      <tr>
-                        <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
-                      </tr>
-                    </thead>
-                    <tbody id="bmcalMiniDays"></tbody>
-                  </table>
-                </div>
-
-                <div class="bmcalLegend">
-                  <div class="bmcalBar bmcalBarRed"></div>
-                  <div class="bmcalSep"></div>
-
-                  <div class="bmcalBar bmcalBarGreen"></div>
-                  <div class="bmcalSep"></div>
-
-                  <div class="bmcalBar bmcalBarBlue"></div>
-                  <div class="bmcalSep"></div>
-
-                  <div class="bmcalBar bmcalBarPeach"></div>
-                  <div class="bmcalSep"></div>
-                </div>
-              </aside>
-
-              <!-- RIGHT AREA -->
-              <section class="bmcalRight">
-                <div class="bmcalMonthNav">
-                  <div class="bmcalPill" id="bmcalMonthLabel">Januari 2026</div>
-                  <button class="bmcalArrow" id="bmcalPrev" type="button" aria-label="Prev">&lt;</button>
-                  <button class="bmcalArrow" id="bmcalNext" type="button" aria-label="Next">&gt;</button>
-                </div>
-
-                <div class="bmcalSchedule">
-                  <div class="bmcalSchHead">
-                    <div class="bmcalCell bmcalJam">Jam</div>
-                    <div class="bmcalCell">4</div>
-                    <div class="bmcalCell">5</div>
-                    <div class="bmcalCell">6</div>
-                    <div class="bmcalCell">7</div>
-                    <div class="bmcalCell">8</div>
-                    <div class="bmcalCell">9</div>
-                    <div class="bmcalCell">10</div>
-                  </div>
-
-                  <div class="bmcalSchBody">
-                    <div class="bmcalBcell"></div>
-                    <div class="bmcalBcell"></div>
-                    <div class="bmcalBcell"></div>
-                    <div class="bmcalBcell"></div>
-                    <div class="bmcalBcell"></div>
-                    <div class="bmcalBcell"></div>
-                    <div class="bmcalBcell"></div>
-                    <div class="bmcalBcell"></div>
-                  </div>
-                </div>
-              </section>
-
+              <div class="docTableWrap">
+                <table class="docTable" aria-label="Dokumen">
+                  <thead>
+                    <tr>
+                      <th>Nama</th>
+                      <th>Tanggal Upload</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="docName">
+                        <span class="docLogo pdf">Logo<br>PDF</span>
+                        <span class="docText">Cara Pembuatan Makanan</span>
+                      </td>
+                      <td class="docDate">12-12-2025</td>
+                    </tr>
+                    <tr>
+                      <td class="docName">
+                        <span class="docLogo word">Logo<br>Word</span>
+                        <span class="docText">Cara Pembuatan Makanan</span>
+                      </td>
+                      <td class="docDate">12-12-2025</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-      </div><!-- /content -->
-
+        </div>
+      </section>
     </main>
   </div>
 
-  <script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
